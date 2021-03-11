@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        ul.nav {
+            list-style-type: none;
+            margin: 0;
+            padding:0;
+            width: 5%;
+            background-color: darkslategrey;
+            height: 100%; /* Full height */
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          padding: 16px;
+          padding-left:20px;
+          text-decoration: none;
+        }
+        
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: lightslategrey;
+          color: white;
+        }
+        #about{
+            background-color: #3CB371;
+        }
+        
+        td{
+            padding:10px;
+            padding-left:15px;
+            padding-right:15px;
+        }
+        #search{
+            width:70px;
+        }
+        .main{
+            margin-left:6%;
+        }
+        td.new{
+            border:2px solid grey;
+        }
+        .tkt{
+            font-size: 25px;
+        }
+        .secondbar{
+            background-color: #F5F5F5;
+            border-bottom:2px solid lightgray;
+        }
+        .col-6{
+            padding-right:0px;
+        }
+        #FILTERS{
+            overflow: scroll;
+            background-color: #F5F5F5;
+            border-left:2px solid lightgray;
+        }
+        .fields{
+            padding:10px;
+        }
+        .filter{
+            width:300px;
+            border-radius: 5px;
+            border:2px solid grey;
+            color:gray;
+        }
+        .tkttable{
+            width:100%;
+            height:auto;
+        }
+        
+        .head{
+            background-color: #F5F5F5 ;
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="body">
+        
+            <div>
+                <ul class="nav">
+                    <li id="about"><a href="#profile"><i class="fa fa-headphones"></i></a></li>
+                    <li><a href="#dashboard"><i class="fa fa-dashcube" ></i></a></li>
+                    <li><a href="#tickets"><i class="fa fa-ticket" ></i></a></li>
+                    <li><a href="#contact"><i class="fa fa-user-o"></i></a></li>
+                    <li><a href="#solution"><i class="fa fa-columns" ></i></a></li>
+                    <li><a href="#chatbox"><i class="fa fa-comments-o" ></i></a></li>
+                    <li><a href="#reports"><i class="fa fa-bar-chart"></i></a></li>
+                    <li><a href="#admin"><i class="fa fa-cog" ></i></a></li>
+                  </ul>
+            </div>
+            <div class="main">
+                <div class="topbar">
+                    <div class="row">
+                        <div class="col-6 pt-1 tkt">
+                            <i class="fa fa-bars"></i>&nbsp;&nbsp;&nbsp;  All Tickets
+                        </div>
+
+                        <div class="col-6">            
+                            <table class="float-end">
+                                <tr>
+                                    <td><button class="start">Get Started</button></td>
+                                    <td><select class="new"><option><i class="fa fa-plus-circle"></i>&nbsp; New</option></select></td>
+                                    <td><input type="text" placeholder="Search" id="search"></td>    
+                                    <td><i class="fa fa-bell-o fa-2x"></i></td>
+                                    <td><i class="fa fa-gift fa-2x"></i></td>
+                                    <td><i class="fa fa-calendar-check-o fa-2x"></i></td>
+                                    <td><button class="profile">U</button></td>
+                                </tr>    
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row secondbar">
+                        <div class="col-6 pt-1 ">
+                            <input type="checkbox" id="select">
+                            <span>Sort By:</span>
+                            <span>Date created</span>
+                        </div>
+
+                        <div class="col-6 ">            
+                            <table class="float-end">
+                                <tr>
+                                    <td><span>Layout:&nbsp; </span> <select class="new"><option>Table View</option></select></td>
+                                    <td><button>Export</button></td>
+                                    <td><span>1-10 of 10</span></td>    
+                                    <td><button>&lsaquo;</button><button>&rsaquo;</button></td>
+                                    <td><button><i class="fa fa-fast-forward"></i></button></td>
+                                    
+                                </tr>    
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-9">
+                        <div class="container mt-2">
+                            <table class="tkttable">
+                                <tr class="head" >
+                                    <td class="head">Contact</td>
+                                    <td class="head">Subject</td>
+                                    <td class="head">State</td>
+                                    <td class="head">Group</td>
+                                </tr>
+                                <tbody id="tablebody">
+                                    <tr>
+                                        <td><input type="checkbox">&nbsp; Matt Rogers</td>
+                                        <td>How can I get refund of my order</td>
+                                        <td><button class="status">New</button></td>
+                                        <td><select class="group"><option>Billing</option></select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-3" id="FILTERS">
+                        <div class="row">
+                        <div class="col-6"></div>
+                            <table>
+                                <tr>
+                                    <td>FILTERS</td>
+                                    <td style="text-align: right;"><button><i class="fa fa-search" aria-hidden="true"></i></button></td>
+                                </tr>
+                            </table>                           
+                        </div>
+                        <div class="fields">
+                        <div class="row mt-1">
+                            <label for="agent">Agent</label><br>
+                            <select class="filter" id="agent"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Groups</label><br>
+                            <select class="filter" id="group"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Created</label><br>
+                            <select class="filter" id="create"><option>Last 30 days</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Resolution due by</label><br>
+                            <select class="filter" id="resdue"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">First response due by</label><br>
+                            <select class="filter" id="fresdue"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Next response due by</label><br>
+                            <select class="filter" id="nresdue"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Skill</label><br>
+                            <select class="filter" id="skill"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Status</label><br>
+                            <select class="filter" id="status"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Priority</label><br>
+                            <select class="filter" id="priority"><option>Any</option></select>
+                        </div>
+                        <div class="row mt-4">
+                            <label for="agent">Type</label><br>
+                            <select class="filter" id="type"><option>Any</option></select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
